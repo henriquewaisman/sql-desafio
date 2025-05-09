@@ -1,5 +1,5 @@
 select 
-row_number() over (order by count(enc.idcliente) desc) as ranking,
+rank() over (order by count(enc.idcliente) desc) as ranking,
 cli.nome as cliente,
 count(enc.idcliente) as qtd_pedido
 from cliente cli
