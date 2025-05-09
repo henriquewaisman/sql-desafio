@@ -1,0 +1,13 @@
+select enc.id,
+cli.nome as cliente, 
+enc.idtransportadora,
+enc.pedido, enc.notafiscal, 
+enc.datacadastro, 
+enc.situacao, 
+enc.valorfrete
+from encomenda enc
+join cliente cli
+on enc.idcliente = cli.id
+join clienteendereco cliend
+on cli.id = cliend.idcliente
+where cliend.id is null;
