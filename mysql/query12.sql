@@ -1,5 +1,4 @@
-use desafio;
-select 
+select
 rank() over (order by count(cli.id) desc) as ranking,
 date_format(cli.datacadastro, '%m-%Y') as mes,
 count(cli.id) as clientes_cadastrados
